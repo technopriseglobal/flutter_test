@@ -33,7 +33,7 @@ class _AddState extends State<Add> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        child: Scaffold(
+      child: Scaffold(
         backgroundColor: conf.Palette.white1,
         body: SingleChildScrollView(
           child: Column(
@@ -46,181 +46,176 @@ class _AddState extends State<Add> {
                 elevation: 1,
                 child: Container(
                   color: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 10.0, vertical: 10.0),
                   child: Row(
                     children: [
                       IconButton(
                         icon: const Icon(Icons.arrow_back_ios),
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.pop(context);
                         },
                       ),
                       const Text(
                         'Add Item',
                         style: TextStyle(
-                          fontSize: 17.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold
-                        ),
+                            fontSize: 17.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 20.0,),
+              const SizedBox(
+                height: 20.0,
+              ),
               Container(
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.all(20.0),
                 margin: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.0)
-                ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     RichText(
-                      text: const TextSpan(
-                        text: '*',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontStyle: FontStyle.italic,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'indicates required fields',
-                            style: TextStyle(
-                              color: Colors.black,
-                            )
-                          )
-                        ]
-                      )
-                    ),
-                    const SizedBox(height: 15.0,),
-                    RichText(
-                      text: const TextSpan(
-                        text: 'Item Title',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        children: [
-                          TextSpan(
+                        text: const TextSpan(
                             text: '*',
                             style: TextStyle(
                               color: Colors.red,
-                              fontWeight: FontWeight.normal
-                            )
-                          )
-                        ]
-                      )
+                              fontStyle: FontStyle.italic,
+                            ),
+                            children: [
+                          TextSpan(
+                              text: 'indicates required fields',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ))
+                        ])),
+                    const SizedBox(
+                      height: 15.0,
                     ),
-                    const SizedBox(height: 15.0,),
+                    RichText(
+                        text: const TextSpan(
+                            text: 'Item Title',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            children: [
+                          TextSpan(
+                              text: '*',
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.normal))
+                        ])),
+                    const SizedBox(
+                      height: 15.0,
+                    ),
                     TextFormField(
                       style: const TextStyle(
-                        // fontSize: widget.fontSize,
-                        // color: widget.textColor
-                      ),
+                          // fontSize: widget.fontSize,
+                          // color: widget.textColor
+                          ),
                       focusNode: titleFocusNode,
                       controller: titleController,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: isTitleError ? Colors.redAccent : Colors.black,
-                          ),
-                          borderRadius: BorderRadius.circular(20.0)
-                        ),
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: isTitleError
+                                  ? Colors.redAccent
+                                  : Colors.black,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0)),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            width: 3,
-                            color: Colors.black,
-                          ),
-                          borderRadius: BorderRadius.circular(20)
-                        ),
+                            borderSide: const BorderSide(
+                              width: 3,
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.circular(20)),
                         contentPadding: const EdgeInsets.symmetric(
-                          vertical: 20.0,
-                          horizontal: 20.0
-                        ),
+                            vertical: 20.0, horizontal: 20.0),
                         labelText: 'Enter a title for the item',
                         // labelStyle: TextStyle(),
                         hintText: 'title',
                         // hintStyle: TextStyle(),
                       ),
                     ),
-                    const SizedBox(height: 15.0,),
+                    const SizedBox(
+                      height: 15.0,
+                    ),
                     const Text(
                       'Description',
                       style: TextStyle(
-                        fontSize: 17.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                      ),
+                          fontSize: 17.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 15.0,),
+                    const SizedBox(
+                      height: 15.0,
+                    ),
                     TextFormField(
                       style: const TextStyle(
-                        // fontSize: widget.fontSize,
-                        // color: widget.textColor
-                      ),
+                          // fontSize: widget.fontSize,
+                          // color: widget.textColor
+                          ),
                       maxLines: 10,
                       focusNode: descriptionFocusNode,
                       controller: descriptionController,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                          borderSide: const  BorderSide(
-                            width: 2,
-                            color: Colors.black,
-                          ),
-                          borderRadius: BorderRadius.circular(20.0)
-                        ),
+                            borderSide: const BorderSide(
+                              width: 2,
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0)),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            width: 3,
-                            color: Colors.black,
-                          ),
-                          borderRadius: BorderRadius.circular(20)
-                        ),
+                            borderSide: const BorderSide(
+                              width: 3,
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.circular(20)),
                         contentPadding: const EdgeInsets.symmetric(
-                          vertical: 20.0,
-                          horizontal: 20.0
-                        ),
+                            vertical: 20.0, horizontal: 20.0),
                         labelText: 'Enter a description for the item',
                         // labelStyle: TextStyle(),
                         hintText: 'description',
                         // hintStyle: TextStyle(),
                       ),
                     ),
-                    const SizedBox(height: 20.0,),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
                     Row(
                       children: [
                         GestureDetector(
                           child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10.0, horizontal: 20.0),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              border: Border.all(
-                                width: 2,
-                                color: conf.Palette.blue1
-                              )
-                            ),
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                    width: 2, color: conf.Palette.blue1)),
                             child: Text(
                               'Cancel',
                               style: TextStyle(
-                                fontSize: 17.0,
-                                color: conf.Palette.blue1
-                              ),
+                                  fontSize: 17.0, color: conf.Palette.blue1),
                             ),
                           ),
-                          onTap: (){
+                          onTap: () {
                             Navigator.pop(context);
                           },
                         ),
                         const Spacer(),
                         GestureDetector(
+                          key: const Key('AddItem'),
                           child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10.0, horizontal: 20.0),
                             decoration: BoxDecoration(
                               color: conf.Palette.blue1,
                               borderRadius: BorderRadius.circular(20.0),
@@ -228,19 +223,17 @@ class _AddState extends State<Add> {
                             child: const Text(
                               'Add Item',
                               style: TextStyle(
-                                fontSize: 17.0,
-                                color: Colors.white
-                              ),
+                                  fontSize: 17.0, color: Colors.white),
                             ),
                           ),
-                          onTap: (){
-                            if(titleController.text.isEmpty){
+                          onTap: () {
+                            if (titleController.text.isEmpty) {
                               setState(() => isTitleError = true);
                             } else {
                               d_datum.Datum d = d_datum.Datum(
-                                title: titleController.text.trim(),
-                                description: descriptionController.text.trim()
-                              );
+                                  title: titleController.text.trim(),
+                                  description:
+                                      descriptionController.text.trim());
                               Navigator.pop(context, d);
                             }
                           },
@@ -254,7 +247,7 @@ class _AddState extends State<Add> {
           ),
         ),
       ),
-      onTap: (){
+      onTap: () {
         titleFocusNode.unfocus();
         descriptionFocusNode.unfocus();
       },

@@ -1,0 +1,32 @@
+name: Technoprise CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.0.0' # Adjust version accordingly
+
+    - name: Flutter Pub Get
+      run: flutter pub get
+
+    - name: Analyze
+      run: flutter analyze
+
+    - name: Lint Check
+      run: dart format --set-exit-if-changed .
+
+    - name: Run Tests
+      run: flutter test
+
+    - name: Integration Tests
+      run: |
+        flutter test integration_test
